@@ -1,0 +1,10 @@
+1. Style Cop was updated to v 4.7 since last usage, and there are some issues were found. 
+	1.a.	StyleCop 4.7 correctly can be install ass package locally to your project. 
+			For this purpose, just use PMC command: Install-Package StyleCop.MSBuild
+			See https://www.nuget.org/packages/StyleCop.MSBuild/ for details. 
+	1.b. 	StyleCop 4.7 has incompatible with previous versions file ignorance options. 
+			See solution is working here: http://stylecop.codeplex.com/wikipage?title=Using%20StyleCop%20on%20Legacy%20Projects&referringTitle=Documentation
+	1.c. 	VS 2013 generate temporary file in obj/Debug folder, and it causes StyleCop warning during build. 
+			To fix the issue, auto-generated files recognizing should be extended in StyleCop config. 
+			See https://stylecop.codeplex.com/discussions/394180 for details.
+			
