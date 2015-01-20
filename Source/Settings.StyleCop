@@ -22,7 +22,7 @@
       <Rules>
         <Rule Name="FieldNamesMustNotBeginWithUnderscore">
           <RuleSettings>
-            <BooleanProperty Name="Enabled">True</BooleanProperty>
+            <BooleanProperty Name="Enabled">False</BooleanProperty>
           </RuleSettings>
         </Rule>
       </Rules>
