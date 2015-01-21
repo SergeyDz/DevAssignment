@@ -42,7 +42,7 @@ namespace SD.CodeProblem.DevAssignment.DomainModel
         /// <summary>
         /// Gets amount value for current account instance.
         /// </summary>
-        /// <remarks>Amount will contains only snapshot of amount, made during last RefreshAmount call.</remarks>
+        /// <remarks>Amount will contains only data snapshot, made during last RefreshAmount call.</remarks>
         public double Amount { get; private set; }
 
         /// <summary>
