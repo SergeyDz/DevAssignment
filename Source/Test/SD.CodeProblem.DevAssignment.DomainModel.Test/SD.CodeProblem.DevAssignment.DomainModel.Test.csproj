@@ -56,10 +56,21 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="AccountInfoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SD.CodeProblem.DevAssignment.Contracts\SD.CodeProblem.DevAssignment.Contracts.csproj">
+      <Project>{32d855b3-1b29-47e9-a95a-e6b72e6ac209}</Project>
+      <Name>SD.CodeProblem.DevAssignment.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SD.CodeProblem.DevAssignment.DomainModel\SD.CodeProblem.DevAssignment.DomainModel.csproj">
+      <Project>{38595594-579b-4e31-b3d9-0c66b0eec5f8}</Project>
+      <Name>SD.CodeProblem.DevAssignment.DomainModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
