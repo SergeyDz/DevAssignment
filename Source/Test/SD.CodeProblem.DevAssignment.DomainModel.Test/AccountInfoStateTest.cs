@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="AccountInfoTest.cs" company="SD">
+// <copyright file="AccountInfoStateTest.cs" company="SD">
 //     Copyright (c) 2015. All rights reserved.
 // </copyright>
 // <author>Sergey Dzyuban</author>
@@ -16,7 +16,7 @@ namespace SD.CodeProblem.DevAssignment.DomainModel.Test
     using SD.CodeProblem.DevAssignment.Contracts;
 
     [TestFixture]
-    public class AccountInfoTest
+    public class AccountInfoStateTest
     {
         private int _accountId;
         private IAccountService _accountService;
@@ -28,13 +28,13 @@ namespace SD.CodeProblem.DevAssignment.DomainModel.Test
             _accountId = 42;
             _amount = 236.45;
 
-            Mock<IAccountService> accountServiceMock = new Mock<IAccountService>();
-            accountServiceMock.Setup(m => m.GetAccountAmount(It.Is<int>(account => account <= 0)))
+            Mock<IAccountService> accountServiceStub = new Mock<IAccountService>();
+            accountServiceStub.Setup(m => m.GetAccountAmount(It.Is<int>(account => account <= 0)))
                 .Throws<ArgumentOutOfRangeException>();
-            accountServiceMock.Setup(m => m.GetAccountAmount(It.IsInRange(1, int.MaxValue, Range.Inclusive)))
+            accountServiceStub.Setup(m => m.GetAccountAmount(It.IsInRange(1, int.MaxValue, Range.Inclusive)))
                 .Returns<double>(val => _amount);
 
-            _accountService = accountServiceMock.Object;
+            _accountService = accountServiceStub.Object;
         }
 
         [Test(Description = "Test ckecks if Amount property will read before RefreshAmount() method call. Expected to return 0.")]
@@ -62,22 +62,14 @@ namespace SD.CodeProblem.DevAssignment.DomainModel.Test
             Assert.AreEqual(_amount, account.Amount);
         }
 
-        [Test(Description = "Test regular scenario when RefreshAmount called and Amount property requested, and Amount is negative.")]
-        public void RefreshAmount_NegativeAmountExists_ReturnaAccountValue()
-        {
-            _amount = -_amount;
-
-            AccountInfo account = new AccountInfo(_accountId, _accountService);
-            account.RefreshAmount();
-
-            Assert.AreEqual(_amount, account.Amount);
-        }
-
-        [Test(Description = "Test scenario when RefreshAmount called few times with same data, and then Amount property requested.")]
+        [Test(Description = "Test scenario when RefreshAmount called few times, and then Amount property requested.")]
         public void RefreshAmount_RefreshAmountDoubleCallWithSameData_ReturnaAccountValue()
         {
             AccountInfo account = new AccountInfo(_accountId, _accountService);
             account.RefreshAmount();
+
+            Assert.AreEqual(_amount, account.Amount);
+            
             account.RefreshAmount();
 
             Assert.AreEqual(_amount, account.Amount);
@@ -86,6 +78,9 @@ namespace SD.CodeProblem.DevAssignment.DomainModel.Test
         [TestCase(0)]
         [TestCase(double.MaxValue)]
         [TestCase(double.MinValue)]
+        [TestCase(double.NaN)]
+        [TestCase(double.PositiveInfinity)]
+        [TestCase(double.NegativeInfinity)]
         public void RefreshAmount_RefreshAmountReturnsExtremalValues_ReturnsAccountValue(double amountValue)
         {
             _amount = amountValue;
@@ -114,6 +109,7 @@ namespace SD.CodeProblem.DevAssignment.DomainModel.Test
 
             Assert.AreEqual(_amount, account.Amount);
 
+            // change amount expectation between the calls.
             _amount = _amount / _accountId;
 
             account.RefreshAmount();

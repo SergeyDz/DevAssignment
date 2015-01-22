@@ -7,4 +7,7 @@
 	1.c. 	VS 2013 generate temporary file in obj/Debug folder, and it causes StyleCop warning during build. 
 			To fix the issue, auto-generated files recognizing should be extended in StyleCop config. 
 			See https://stylecop.codeplex.com/discussions/394180 for details.
+
+2. http://martinfowler.com/articles/mocksArentStubs.html - just to know how world changes since 2007.
+3. Moq quick start guide: https://github.com/Moq/moq4/wiki/Quickstart
 			
