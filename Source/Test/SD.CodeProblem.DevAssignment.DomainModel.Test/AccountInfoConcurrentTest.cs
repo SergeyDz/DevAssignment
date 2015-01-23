@@ -22,9 +22,10 @@ namespace SD.CodeProblem.DevAssignment.DomainModel.Tes
         private double _amount;
 
         /// <summary>
-        /// Test describes the problem, when few Tasks start to work with AccountInfo instance parallel. 
-        /// The correct bahiour is when AccountInfo instance in one thread make snapshot of Amount value just after 
-        /// RefreshAmount() call and keep in unchanged (isolated), no matter was called RefreshAmount() from parallel thread or not.
+        /// Test describes the problem, when few Tasks start to work with same AccountInfo instance parallel. 
+        /// The correct bahiour is: when AccountInfo instance in one thread make snapshot of Amount value (just after 
+        /// RefreshAmount() call ends) and keep in unchanged (isolated), no matter when was called RefreshAmount() 
+        /// from parallel thread or not called at all.
         /// </summary>
         [Test(Description = "Check that per thread Amount snapshot stay unchanged, when other thread calls RefreshAmount()")]
         [Ignore("Long-running test. Need to be called per-request manually")]
@@ -64,6 +65,34 @@ namespace SD.CodeProblem.DevAssignment.DomainModel.Tes
             });
 
             await Task.WhenAll(task1, task2, task3);
+        }
+
+        [Test(Description = "Checks how many times IAccountService method was called during interaction with AccountInfo.")]
+        [Ignore("Long-running test. Need to be called per-request manually")]
+        public async void RefreshAccount_AccountServiceCalledCheck_OnceCall()
+        {
+            _amount = 456.43;
+            const int N = 10;
+
+            Mock<IAccountService> mock = new Mock<IAccountService>();
+            mock.Setup(m => m.GetAccountAmount(It.IsAny<int>()))
+                .Callback(() => Thread.Sleep(100))
+                .Returns<double>(t => Task.FromResult(_amount));
+
+            AccountInfo account = new AccountInfo(4, mock.Object);
+            Task[] tasks = new Task[N];
+            for (int i = 0; i < N; i++)
+            {
+                tasks[i] = Task.Run(async () =>
+                {
+                    await account.RefreshAmount();
+                    Assert.AreEqual(_amount, account.Amount);
+                });
+            }
+
+            await Task.WhenAll(tasks);
+
+            mock.Verify(m=>m.GetAccountAmount(It.IsAny<int>()), Times.Exactly(N));
         }
     }
 }
