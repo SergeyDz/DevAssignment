@@ -23,7 +23,7 @@ namespace SD.CodeProblem.DevAssignment.Services
         /// </summary>
         /// <param name="accountId">Account identifier.</param>
         /// <returns>Returns account amount value.</returns>
-        public double GetAccountAmount(int accountId)
+        public Task<double> GetAccountAmount(int accountId)
         {
             throw new NotImplementedException();
         }

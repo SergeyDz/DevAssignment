@@ -22,6 +22,6 @@ namespace SD.CodeProblem.DevAssignment.Contracts
         /// </summary>
         /// <param name="accountId">Account identifier.</param>
         /// <returns>Returns account amount value.</returns>
-        double GetAccountAmount(int accountId);
+        Task<double> GetAccountAmount(int accountId);
     }
 }
