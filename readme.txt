@@ -1,3 +1,19 @@
+
+ENVIRONMENT: 
+1. Visual Studio 2013
+2. AppHarbor CI build 
+3. Resharper 
+
+Folder description:
+ - Batch - contains msbuild and open-cover generator batches. 
+ - BinOutput - folder to place after-build dlls as artifacts
+ - Docs - documents and notes 
+ - Reports - folder to place auto buil generated reports
+ - Source - folder with source files.  
+
+
+
+--------------------------------------------- INITIAL TASK ----------------------------------------------------------------
 Developer Candidate Assignment
 IMPORTANT: You have 5 working days to finish the two problems. Problem #1 is MANDATORY. Problem
 #2 is optional.
