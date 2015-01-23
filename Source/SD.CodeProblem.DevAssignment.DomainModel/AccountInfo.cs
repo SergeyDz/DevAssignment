@@ -10,6 +10,7 @@ namespace SD.CodeProblem.DevAssignment.DomainModel
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
+    using System.Threading;
     using System.Threading.Tasks;
     using SD.CodeProblem.DevAssignment.Contracts;
 
@@ -29,6 +30,11 @@ namespace SD.CodeProblem.DevAssignment.DomainModel
         private readonly IAccountService _accountService;
 
         /// <summary>
+        /// Thread safe local amount variable.
+        /// </summary>
+        private ThreadLocal<double> _amount;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="AccountInfo"/> class.
         /// </summary>
         /// <param name="accountId">Account identifier.</param>
@@ -37,13 +43,18 @@ namespace SD.CodeProblem.DevAssignment.DomainModel
         {
             _accountId = accountId;
             _accountService = accountService;
+            _amount = new ThreadLocal<double>();
         }
 
         /// <summary>
         /// Gets amount value for current account instance.
         /// </summary>
         /// <remarks>Amount will contains only data snapshot, made during last RefreshAmount call.</remarks>
-        public double Amount { get; private set; }
+        public double Amount
+        {
+            get { return _amount.Value; }
+            private set { _amount.Value = value; }
+        }
 
         /// <summary>
         /// Refresh account amount value by instance member account id.
