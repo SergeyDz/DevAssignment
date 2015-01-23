@@ -54,7 +54,7 @@ namespace SD.CodeProblem.DevAssignment.DomainModel.Test
         }
 
         [Test(Description = "Test regular scenario when RefreshAmount called and Amount property requested.")]
-        public async Task RefreshAmount_PositiveAmountExists_ReturnaAccountValue()
+        public async void RefreshAmount_PositiveAmountExists_ReturnaAccountValue()
         {
             AccountInfo account = new AccountInfo(_accountId, _accountService);
             await account.RefreshAmount();
@@ -63,7 +63,7 @@ namespace SD.CodeProblem.DevAssignment.DomainModel.Test
         }
 
         [Test(Description = "Test scenario when RefreshAmount called few times, and then Amount property requested.")]
-        public async Task RefreshAmount_RefreshAmountDoubleCallWithSameData_ReturnaAccountValue()
+        public async void RefreshAmount_RefreshAmountDoubleCallWithSameData_ReturnaAccountValue()
         {
             AccountInfo account = new AccountInfo(_accountId, _accountService);
             await account.RefreshAmount();
@@ -81,7 +81,7 @@ namespace SD.CodeProblem.DevAssignment.DomainModel.Test
         [TestCase(double.NaN)]
         [TestCase(double.PositiveInfinity)]
         [TestCase(double.NegativeInfinity)]
-        public async Task RefreshAmount_RefreshAmountReturnsExtremalValues_ReturnsAccountValue(double amountValue)
+        public async void RefreshAmount_RefreshAmountReturnsExtremalValues_ReturnsAccountValue(double amountValue)
         {
             _amount = amountValue;
 
@@ -93,7 +93,7 @@ namespace SD.CodeProblem.DevAssignment.DomainModel.Test
 
         [Test(Description = "Test scenario when requested account number is invalid, and data was not found.")]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public async Task RefreshAmount_RefreshAmountForNotExistedAccountNumber_Exception()
+        public async void RefreshAmount_RefreshAmountForNotExistedAccountNumber_Exception()
         {
             _accountId = 0; 
 
@@ -102,7 +102,7 @@ namespace SD.CodeProblem.DevAssignment.DomainModel.Test
         }
 
         [Test(Description = "Test scenario when RefreshAmount called few times with data changes between calls. Amount property checked few times.")]
-        public async Task RefreshAmount_RefreshAmountDoubleCallWithDifferentData_ReturnaAccountValue()
+        public async void RefreshAmount_RefreshAmountDoubleCallWithDifferentData_ReturnaAccountValue()
         {
             AccountInfo account = new AccountInfo(_accountId, _accountService);
             await account.RefreshAmount();
