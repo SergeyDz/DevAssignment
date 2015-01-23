@@ -4,6 +4,9 @@
 // </copyright>
 // <author>Sergey Dzyuban</author>
 //-----------------------------------------------------------------------
+
+using System.Threading;
+
 namespace SD.CodeProblem.DevAssignment.DomainModel.Test
 {
     using System;
@@ -30,10 +33,10 @@ namespace SD.CodeProblem.DevAssignment.DomainModel.Test
 
             Mock<IAccountService> accountServiceStub = new Mock<IAccountService>();
             accountServiceStub.Setup(m => m.GetAccountAmount(It.Is<int>(account => account <= 0)))
-                .Callback(() => Task.Delay(10))
+                .Callback(() => Thread.Sleep(10))
                 .ThrowsAsync(new ArgumentOutOfRangeException());
             accountServiceStub.Setup(m => m.GetAccountAmount(It.IsInRange(1, int.MaxValue, Range.Inclusive)))
-                .Callback(() => Task.Delay(10))
+               .Callback(() => Thread.Sleep(10))
                 .Returns<double>(t => Task.FromResult(_amount));
 
             _accountService = accountServiceStub.Object;
