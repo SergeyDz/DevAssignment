@@ -30,8 +30,10 @@ namespace SD.CodeProblem.DevAssignment.DomainModel.Test
 
             Mock<IAccountService> accountServiceStub = new Mock<IAccountService>();
             accountServiceStub.Setup(m => m.GetAccountAmount(It.Is<int>(account => account <= 0)))
-                .Throws<ArgumentOutOfRangeException>();
+                .Callback(() => Task.Delay(10))
+                .ThrowsAsync(new ArgumentOutOfRangeException());
             accountServiceStub.Setup(m => m.GetAccountAmount(It.IsInRange(1, int.MaxValue, Range.Inclusive)))
+                .Callback(() => Task.Delay(10))
                 .Returns<double>(t => Task.FromResult(_amount));
 
             _accountService = accountServiceStub.Object;
