@@ -32,7 +32,7 @@ namespace SD.CodeProblem.DevAssignment.DomainModel.Test
             accountServiceStub.Setup(m => m.GetAccountAmount(It.Is<int>(account => account <= 0)))
                 .Throws<ArgumentOutOfRangeException>();
             accountServiceStub.Setup(m => m.GetAccountAmount(It.IsInRange(1, int.MaxValue, Range.Inclusive)))
-                .Returns<double>(val => _amount);
+                .Returns<double>(t => Task.FromResult(_amount));
 
             _accountService = accountServiceStub.Object;
         }
@@ -54,23 +54,23 @@ namespace SD.CodeProblem.DevAssignment.DomainModel.Test
         }
 
         [Test(Description = "Test regular scenario when RefreshAmount called and Amount property requested.")]
-        public void RefreshAmount_PositiveAmountExists_ReturnaAccountValue()
+        public async Task RefreshAmount_PositiveAmountExists_ReturnaAccountValue()
         {
             AccountInfo account = new AccountInfo(_accountId, _accountService);
-            account.RefreshAmount();
+            await account.RefreshAmount();
 
             Assert.AreEqual(_amount, account.Amount);
         }
 
         [Test(Description = "Test scenario when RefreshAmount called few times, and then Amount property requested.")]
-        public void RefreshAmount_RefreshAmountDoubleCallWithSameData_ReturnaAccountValue()
+        public async Task RefreshAmount_RefreshAmountDoubleCallWithSameData_ReturnaAccountValue()
         {
             AccountInfo account = new AccountInfo(_accountId, _accountService);
-            account.RefreshAmount();
+            await account.RefreshAmount();
 
             Assert.AreEqual(_amount, account.Amount);
             
-            account.RefreshAmount();
+            await account.RefreshAmount();
 
             Assert.AreEqual(_amount, account.Amount);
         }
@@ -81,38 +81,38 @@ namespace SD.CodeProblem.DevAssignment.DomainModel.Test
         [TestCase(double.NaN)]
         [TestCase(double.PositiveInfinity)]
         [TestCase(double.NegativeInfinity)]
-        public void RefreshAmount_RefreshAmountReturnsExtremalValues_ReturnsAccountValue(double amountValue)
+        public async Task RefreshAmount_RefreshAmountReturnsExtremalValues_ReturnsAccountValue(double amountValue)
         {
             _amount = amountValue;
 
             AccountInfo account = new AccountInfo(_accountId, _accountService);
-            account.RefreshAmount();
+            await account.RefreshAmount();
 
             Assert.AreEqual(_amount, account.Amount);
         }
 
         [Test(Description = "Test scenario when requested account number is invalid, and data was not found.")]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void RefreshAmount_RefreshAmountForNotExistedAccountNumber_Exception()
+        public async Task RefreshAmount_RefreshAmountForNotExistedAccountNumber_Exception()
         {
             _accountId = 0; 
 
             AccountInfo account = new AccountInfo(_accountId, _accountService);
-            account.RefreshAmount();
+            await account.RefreshAmount();
         }
 
         [Test(Description = "Test scenario when RefreshAmount called few times with data changes between calls. Amount property checked few times.")]
-        public void RefreshAmount_RefreshAmountDoubleCallWithDifferentData_ReturnaAccountValue()
+        public async Task RefreshAmount_RefreshAmountDoubleCallWithDifferentData_ReturnaAccountValue()
         {
             AccountInfo account = new AccountInfo(_accountId, _accountService);
-            account.RefreshAmount();
+            await account.RefreshAmount();
 
             Assert.AreEqual(_amount, account.Amount);
 
             // change amount expectation between the calls.
             _amount = _amount / _accountId;
 
-            account.RefreshAmount();
+            await account.RefreshAmount();
 
             Assert.AreEqual(_amount, account.Amount);
         }
