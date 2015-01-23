@@ -48,6 +48,7 @@ namespace SD.CodeProblem.DevAssignment.DomainModel
         /// <summary>
         /// Refresh account amount value by instance member account id.
         /// </summary>
+        /// <returns>Task for sync context.</returns>
         public async Task RefreshAmount()
         {
             Amount = await _accountService.GetAccountAmount(_accountId);
