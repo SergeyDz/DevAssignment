@@ -10,4 +10,7 @@
 
 2. http://martinfowler.com/articles/mocksArentStubs.html - just to know how world changes since 2007.
 3. Moq quick start guide: https://github.com/Moq/moq4/wiki/Quickstart
+4. AppHarbor can't build solution with few .sln files in repository. See strategy how to avoid here: http://support.appharbor.com/kb/getting-started/build-process-and-solution-file-convention
+5. Uploading AppHarbor CI, was found issue with old version of NUnit test runner, which works incorrect with ExpectedException for 'async void' test. See https://bugs.launchpad.net/nunitv2/+bug/1071164
+
 			
