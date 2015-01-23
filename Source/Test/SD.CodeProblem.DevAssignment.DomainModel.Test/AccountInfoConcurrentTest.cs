@@ -27,11 +27,12 @@ namespace SD.CodeProblem.DevAssignment.DomainModel.Tes
         /// RefreshAmount() call and keep in unchanged (isolated), no matter was called RefreshAmount() from parallel thread or not.
         /// </summary>
         [Test(Description = "Check that per thread Amount snapshot stay unchanged, when other thread calls RefreshAmount()")]
+        [Ignore("Long-running test. Need to be called per-request manually")]
         public async void RefreshAccount_ConcurrentCalls_ReturnsIsolatedAmountPerThread()
         {
             Mock<IAccountService> accountServiceStub = new Mock<IAccountService>();
             accountServiceStub.Setup(m => m.GetAccountAmount(It.IsInRange(1, int.MaxValue, Range.Inclusive)))
-                .Callback(() => Thread.Sleep(100))
+                .Callback(() => Thread.Sleep(10))
                 .Returns<double>(t => Task.FromResult(_amount));
 
             AccountInfo info = new AccountInfo(43, accountServiceStub.Object);
