@@ -4,12 +4,6 @@
 // </copyright>
 // <author>Sergey Dzyuban</author>
 //-----------------------------------------------------------------------
-
-using System.Threading;
-using Moq;
-using NUnit.Framework;
-using SD.CodeProblem.DevAssignment.Contracts;
-
 namespace SD.CodeProblem.DevAssignment.DomainModel.Tes
 {
     using System;
@@ -17,6 +11,10 @@ namespace SD.CodeProblem.DevAssignment.DomainModel.Tes
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using System.Threading;
+    using Moq;
+    using NUnit.Framework;
+    using SD.CodeProblem.DevAssignment.Contracts;
 
     [TestFixture]
     public class AccountInfoConcurrentTest

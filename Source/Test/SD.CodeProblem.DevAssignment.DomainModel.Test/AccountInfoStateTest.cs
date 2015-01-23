@@ -4,9 +4,6 @@
 // </copyright>
 // <author>Sergey Dzyuban</author>
 //-----------------------------------------------------------------------
-
-using System.Threading;
-
 namespace SD.CodeProblem.DevAssignment.DomainModel.Test
 {
     using System;
@@ -17,6 +14,7 @@ namespace SD.CodeProblem.DevAssignment.DomainModel.Test
     using NUnit.Framework;
     using Moq;
     using SD.CodeProblem.DevAssignment.Contracts;
+    using System.Threading;
 
     [TestFixture]
     public class AccountInfoStateTest
