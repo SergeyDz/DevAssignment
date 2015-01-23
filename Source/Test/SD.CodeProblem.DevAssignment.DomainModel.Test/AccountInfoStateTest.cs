@@ -95,7 +95,7 @@ namespace SD.CodeProblem.DevAssignment.DomainModel.Test
 
         [Test(Description = "Test scenario when requested account number is invalid, and data was not found.")]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public async void RefreshAmount_RefreshAmountForNotExistedAccountNumber_Exception()
+        public async Task RefreshAmount_RefreshAmountForNotExistedAccountNumber_Exception()
         {
             _accountId = 0; 
 
