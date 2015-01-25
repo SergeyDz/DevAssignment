@@ -18,6 +18,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{FDAAFD43-1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SD.CodeProblem.DevAssignment.DomainModel.Test", "Test\SD.CodeProblem.DevAssignment.DomainModel.Test\SD.CodeProblem.DevAssignment.DomainModel.Test.csproj", "{6D5B4642-BF55-4B56-823F-726E3EEDAEEA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{0BA1437A-BB8C-4F43-980A-26F746B1ACF0}"
+	ProjectSection(SolutionItems) = preProject
+		..\Docs\01.CommonIssues.txt = ..\Docs\01.CommonIssues.txt
+		..\readme.txt = ..\readme.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
