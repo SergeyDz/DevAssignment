@@ -12,7 +12,7 @@ namespace SD.CodeProblem.DevAssignment.DomainModel
     using System.Text;
     using System.Threading;
     using System.Threading.Tasks;
-    using SD.CodeProblem.DevAssignment.Contracts;
+    using SD.CodeProblem.DevAssignment.Contracts.Services;
 
     /// <summary>
     /// Account information domain model member.

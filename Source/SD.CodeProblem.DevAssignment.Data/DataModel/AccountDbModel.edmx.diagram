@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="880e682dc0114b19bc0adc0e2fc235ad" Name="Diagram1" >
+        <EntityTypeShape EntityType="AccountDbModel.Account" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="AccountDbModel.Order" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="AccountDbModel.User" Width="1.5" PointX="0.75" PointY="1.125" />
+        <AssociationConnector Association="AccountDbModel.FK__Account__Created__182C9B23" />
+        <AssociationConnector Association="AccountDbModel.FK__Account__Updated__1920BF5C" />
+        <AssociationConnector Association="AccountDbModel.FK__Order__AccountId__1CF15040" />
+        <AssociationConnector Association="AccountDbModel.FK__Order__CreatedBy__1DE57479" />
+        <AssociationConnector Association="AccountDbModel.FK__Order__UpdatedBy__1ED998B2" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

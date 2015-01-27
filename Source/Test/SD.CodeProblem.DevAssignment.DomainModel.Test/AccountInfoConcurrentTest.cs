@@ -14,7 +14,7 @@ namespace SD.CodeProblem.DevAssignment.DomainModel.Tes
     using System.Threading;
     using Moq;
     using NUnit.Framework;
-    using SD.CodeProblem.DevAssignment.Contracts;
+    using SD.CodeProblem.DevAssignment.Contracts.Services;
 
     [TestFixture]
     public class AccountInfoConcurrentTest

@@ -39,7 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IAccountService.cs" />
+    <Compile Include="Data\IDataRepository.cs" />
+    <Compile Include="Services\IAccountService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
       <ExcludeFromSourceAnalysis>true</ExcludeFromSourceAnalysis>

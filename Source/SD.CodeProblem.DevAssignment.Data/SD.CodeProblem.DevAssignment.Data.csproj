@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C380A0D1-1A35-4A98-90E1-CA07AFE88AE9}</ProjectGuid>
+    <ProjectGuid>{1696B54D-82D2-48F5-B4D6-DD5E744B1E35}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SD.CodeProblem.DevAssignment.Services</RootNamespace>
-    <AssemblyName>SD.CodeProblem.DevAssignment.Services</AssemblyName>
+    <RootNamespace>SD.CodeProblem.DevAssignment.Data</RootNamespace>
+    <AssemblyName>SD.CodeProblem.DevAssignment.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,15 +31,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,37 +51,74 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountService.cs" />
+    <Compile Include="DataModel\Account.cs">
+      <DependentUpon>AccountDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\AccountBbContext.cs" />
+    <Compile Include="DataModel\AccountDbModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountDbModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\AccountDbModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\AccountDbModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountDbModel.edmx</DependentUpon>
+	  <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
+      <ExcludeFromSourceAnalysis>true</ExcludeFromSourceAnalysis>
+    </Compile>
+    <Compile Include="DataModel\IAccountDbContext.cs" />
+    <Compile Include="DataModel\Order.cs">
+      <DependentUpon>AccountDbModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <ExcludeFromStyleCop>true</ExcludeFromStyleCop>
       <ExcludeFromSourceAnalysis>true</ExcludeFromSourceAnalysis>
     </Compile>
+    <Compile Include="Repository\AccountRepository.cs" />
+    <Compile Include="DataModel\User.cs">
+      <DependentUpon>AccountDbModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <EntityDeploy Include="DataModel\AccountDbModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AccountDbModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataModel\AccountDbModel.edmx.diagram">
+      <DependentUpon>AccountDbModel.edmx</DependentUpon>
+    </None>
+    <None Include="App.Config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SD.CodeProblem.DevAssignment.Contracts\SD.CodeProblem.DevAssignment.Contracts.csproj">
       <Project>{32d855b3-1b29-47e9-a95a-e6b72e6ac209}</Project>
       <Name>SD.CodeProblem.DevAssignment.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SD.CodeProblem.DevAssignment.Data\SD.CodeProblem.DevAssignment.Data.csproj">
-      <Project>{1696b54d-82d2-48f5-b4d6-dd5e744b1e35}</Project>
-      <Name>SD.CodeProblem.DevAssignment.Data</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataModel\AccountDbModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AccountDbModel.edmx</DependentUpon>
+      <LastGenOutput>AccountDbModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataModel\AccountDbModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AccountDbModel.edmx</DependentUpon>
+      <LastGenOutput>AccountDbModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\SD.CodeProblem.DevAssignment.Contracts\packages\StyleCop.MSBuild.4.7.49.0\build\StyleCop.MSBuild.Targets" Condition="Exists('..\SD.CodeProblem.DevAssignment.Contracts\packages\StyleCop.MSBuild.4.7.49.0\build\StyleCop.MSBuild.Targets')" />
   <Import Project="..\packages\StyleCop.MSBuild.4.7.49.0\build\StyleCop.MSBuild.Targets" Condition="Exists('..\packages\StyleCop.MSBuild.4.7.49.0\build\StyleCop.MSBuild.Targets')" />
-  <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PostBuildEvent>copy "$(TargetDir)$(TargetName).dll" "$(ProjectDir)..\..\BinOutput"
-copy "$(TargetDir)$(TargetName).pdb" "$(ProjectDir)..\..\BinOutput"</PostBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

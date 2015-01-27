@@ -13,7 +13,7 @@ namespace SD.CodeProblem.DevAssignment.DomainModel.Test
     using System.Threading.Tasks;
     using NUnit.Framework;
     using Moq;
-    using SD.CodeProblem.DevAssignment.Contracts;
+    using SD.CodeProblem.DevAssignment.Contracts.Services;
     using System.Threading;
 
     [TestFixture]

@@ -1,0 +1,22 @@
+﻿<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Account Number</th>
+            <th>Account Name</th>
+            <th>Created By</th>
+            <th>Created On</th>
+            <th>Amount</th>
+        </tr>
+        </thead>
+        <tr ng-repeat="account in Accounts">
+            <td>{{ account.Id }}</td>
+            <td>{{ account.Code }}</td>
+            <td>{{ account.Name }}</td>
+            <td>{{ account.CreatedBy.Name }}</td>
+            <td>{{ account.CreatedOn }}</td>
+            <td>refresh</td>
+        </tr>
+    </table> 
+</div>

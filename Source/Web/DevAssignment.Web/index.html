@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="accountApp">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Account Client - ngApp</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar navbar-fixed-top navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Dev Assignment</a>
+            </div>
+        </div>
+    </div>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Account information</h1>
+            <p>This sample application is using AngularJs 1.3.10 and Angular UI router for building restfull js client over ASP.NET WebApi solution.</p>
+            <p>
+                <a class="btn btn-primary btn-lg" href="https://bitbucket.org/SergeyDzyuban/devassignment/overview" role="button">Show repository...</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="container" ui-view></div>
+
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-ui-router.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+
+    <script src="src/services/AccountService.js"></script>
+    <script src="src/controllers/AccountListController.js"></script>
+    <script src="src/app.js"></script>
+</body>
+</html>
