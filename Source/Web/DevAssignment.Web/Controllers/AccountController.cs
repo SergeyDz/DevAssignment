@@ -38,7 +38,7 @@ namespace DevAssignment.WebApi.Controllers
         public async Task<List<Account>> GetAccountsAsync()
         {
             var result = await _accountService.GetList<Account>();
-            return result.ToList();
+            return result.Take(10).ToList();
         }
     }
 }

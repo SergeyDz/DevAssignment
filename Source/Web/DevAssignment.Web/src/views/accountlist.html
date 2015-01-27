@@ -1,14 +1,15 @@
-﻿<div class="table-responsive">
+﻿<h1><span class="label label-primary">Accounts <span class="badge">{{Accounts.length}}</span></span></h1>
+<div class="table-responsive">
     <table class="table table-striped">
         <thead>
-        <tr>
-            <th>#</th>
-            <th>Account Number</th>
-            <th>Account Name</th>
-            <th>Created By</th>
-            <th>Created On</th>
-            <th>Amount</th>
-        </tr>
+            <tr>
+                <th>#</th>
+                <th>Account Number</th>
+                <th>Account Name</th>
+                <th>Created By</th>
+                <th>Created On</th>
+                <th>Amount</th>
+            </tr>
         </thead>
         <tr ng-repeat="account in Accounts">
             <td>{{ account.Id }}</td>
@@ -16,7 +17,7 @@
             <td>{{ account.Name }}</td>
             <td>{{ account.CreatedBy.Name }}</td>
             <td>{{ account.CreatedOn }}</td>
-            <td>refresh</td>
+            <td><button type="button" class="btn btn-xs btn-info" ng-click="getAccountAmount(account)">Info</button>{{account.Amount | number:2}}</td>
         </tr>
-    </table> 
+    </table>
 </div>
