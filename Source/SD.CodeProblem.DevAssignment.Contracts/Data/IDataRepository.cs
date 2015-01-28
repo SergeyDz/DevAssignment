@@ -21,7 +21,7 @@ namespace SD.CodeProblem.DevAssignment.Contracts.Data
         /// <summary>
         /// Load list of entities.
         /// </summary>
-        /// <param name="filters">Filter queribale functions list.</param>
+        /// <param name="filters">Filter functions list.</param>
         /// <returns>Enumerable collection of Account records.</returns>
         Task<IEnumerable<TData>> Load(List<Func<IQueryable<TData>, IQueryable<TData>>> filters = null);
 

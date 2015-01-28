@@ -132,9 +132,9 @@
       <Project>{1696b54d-82d2-48f5-b4d6-dd5e744b1e35}</Project>
       <Name>SD.CodeProblem.DevAssignment.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\SD.CodeProblem.DevAssignment.DomainModel\SD.CodeProblem.DevAssignment.DomainModel.csproj">
+    <ProjectReference Include="..\..\SD.CodeProblem.DevAssignment.Domain\SD.CodeProblem.DevAssignment.Domain.csproj">
       <Project>{38595594-579b-4e31-b3d9-0c66b0eec5f8}</Project>
-      <Name>SD.CodeProblem.DevAssignment.DomainModel</Name>
+      <Name>SD.CodeProblem.DevAssignment.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\SD.CodeProblem.DevAssignment.Services\SD.CodeProblem.DevAssignment.Services.csproj">
       <Project>{c380a0d1-1a35-4a98-90e1-ca07afe88ae9}</Project>

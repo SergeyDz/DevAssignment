@@ -12,11 +12,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StyleCop", "StyleCop", "{53
 		Settings.StyleCop = Settings.StyleCop
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SD.CodeProblem.DevAssignment.DomainModel", "SD.CodeProblem.DevAssignment.DomainModel\SD.CodeProblem.DevAssignment.DomainModel.csproj", "{38595594-579B-4E31-B3D9-0C66B0EEC5F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SD.CodeProblem.DevAssignment.Domain", "SD.CodeProblem.DevAssignment.Domain\SD.CodeProblem.DevAssignment.Domain.csproj", "{38595594-579B-4E31-B3D9-0C66B0EEC5F8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{FDAAFD43-1C19-4215-880B-5192B6FE0CAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SD.CodeProblem.DevAssignment.DomainModel.Test", "Test\SD.CodeProblem.DevAssignment.DomainModel.Test\SD.CodeProblem.DevAssignment.DomainModel.Test.csproj", "{6D5B4642-BF55-4B56-823F-726E3EEDAEEA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SD.CodeProblem.DevAssignment.Business.Test", "Test\SD.CodeProblem.DevAssignment.Business.Test\SD.CodeProblem.DevAssignment.Business.Test.csproj", "{6D5B4642-BF55-4B56-823F-726E3EEDAEEA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{0BA1437A-BB8C-4F43-980A-26F746B1ACF0}"
 	ProjectSection(SolutionItems) = preProject
@@ -29,6 +29,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{ADFD9E6A-13E7-482C-91E1-8911A4A41AC5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevAssignment.Web", "Web\DevAssignment.Web\DevAssignment.Web.csproj", "{1770170C-88DD-463A-9557-BA185855456F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SD.CodeProblem.DevAssignment.Business", "SD.CodeProblem.DevAssignment.Business\SD.CodeProblem.DevAssignment.Business.csproj", "{EDB3D4DB-31C3-4768-8C0E-ACB0AB7A2AA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,6 +62,10 @@ Global
 		{1770170C-88DD-463A-9557-BA185855456F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1770170C-88DD-463A-9557-BA185855456F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1770170C-88DD-463A-9557-BA185855456F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDB3D4DB-31C3-4768-8C0E-ACB0AB7A2AA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDB3D4DB-31C3-4768-8C0E-ACB0AB7A2AA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDB3D4DB-31C3-4768-8C0E-ACB0AB7A2AA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDB3D4DB-31C3-4768-8C0E-ACB0AB7A2AA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

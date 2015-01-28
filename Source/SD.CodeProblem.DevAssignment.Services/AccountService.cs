@@ -42,15 +42,18 @@ namespace SD.CodeProblem.DevAssignment.Services
         /// <returns>Returns account amount value.</returns>
         public async Task<double> GetAccountAmount(int accountId)
         {
-            var account = await _repository.GetById(accountId);
-            return account.Orders.Sum(p => p.Amount);
+            var filters = new List<Func<IQueryable<Account>, IQueryable<Account>>>();
+            filters.Add(q => q.Include(p => p.Orders));
+            filters.Add(q => q.Where(p => p.Id == accountId));
+            var result = await _repository.Load(filters);
+            return result.FirstOrDefault().Orders.Sum(p => p.Amount);
         }
 
         /// <summary>
         /// Get full list of entities.
         /// </summary>
-        /// <param name="filters">Filter queribale functions list.</param>
-        /// <typeparam name="T">entity type parameter.</typeparam>
+        /// <param name="filters">Filter functions list.</param>
+        /// <typeparam name="T">Entity type parameter.</typeparam>
         /// <returns>Generic collection of requested type.</returns>
         public async Task<IEnumerable<T>> GetList<T>(List<Func<IQueryable<T>, IQueryable<T>>> filters = null)
         {

@@ -4,7 +4,7 @@
 // </copyright>
 // <author>Sergey Dzyuban</author>
 //-----------------------------------------------------------------------
-namespace SD.CodeProblem.DevAssignment.DomainModel
+namespace SD.CodeProblem.DevAssignment.Business.Model
 {
     using System;
     using System.Collections.Generic;

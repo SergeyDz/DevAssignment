@@ -4,7 +4,7 @@
 // </copyright>
 // <author>Sergey Dzyuban</author>
 //-----------------------------------------------------------------------
-namespace SD.CodeProblem.DevAssignment.DomainModel.Test
+namespace SD.CodeProblem.DevAssignment.Business.Testt
 {
     using System;
     using System.Collections.Generic;
@@ -14,7 +14,7 @@ namespace SD.CodeProblem.DevAssignment.DomainModel.Test
     using Moq;
     using NUnit.Framework;
     using SD.CodeProblem.DevAssignment.Contracts.Services;
-    using SD.CodeProblem.DevAssignment.DomainModel;
+    using SD.CodeProblem.DevAssignment.Business.Model;
 
     [TestFixture]
     public class AccountInfoInteractionTest

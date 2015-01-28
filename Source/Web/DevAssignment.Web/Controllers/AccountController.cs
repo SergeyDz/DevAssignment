@@ -12,7 +12,6 @@ using SD.CodeProblem.DevAssignment.Contracts.Data;
 using SD.CodeProblem.DevAssignment.Contracts.Services;
 using SD.CodeProblem.DevAssignment.Data.DataModel;
 using SD.CodeProblem.DevAssignment.Data.Repository;
-using SD.CodeProblem.DevAssignment.DomainModel;
 using SD.CodeProblem.DevAssignment.Services;
 
 namespace DevAssignment.WebApi.Controllers
