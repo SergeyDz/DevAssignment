@@ -49,11 +49,22 @@ namespace SD.CodeProblem.DevAssignment.Services
         /// <summary>
         /// Get full list of entities.
         /// </summary>
+        /// <param name="filters">Filter queribale functions list.</param>
         /// <typeparam name="T">entity type parameter.</typeparam>
         /// <returns>Generic collection of requested type.</returns>
-        public async Task<IEnumerable<T>> GetList<T>()
+        public async Task<IEnumerable<T>> GetList<T>(List<Func<IQueryable<T>, IQueryable<T>>> filters = null)
         {
-            var list = await _repository.Load();
+            IEnumerable<Account> list = null;
+
+            if (filters == null)
+            {
+                list = await _repository.Load();
+            }
+            else
+            {
+                list = await _repository.Load(filters.Cast<Func<IQueryable<Account>, IQueryable<Account>>>().ToList());
+            }
+
             return list.Cast<T>();
         }
     }

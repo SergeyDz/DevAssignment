@@ -1,4 +1,4 @@
-﻿(function(app) {
+﻿(function() {
     angular.module('accountApp', [
             'ui.router',
             'AccountCtrl'
@@ -9,7 +9,7 @@
         $stateProvider
             .state('account', {
                 url: '/account/list',
-                templateUrl: 'src/views/accountlist.html',
+                templateUrl: 'src/views/account/list.html',
                 controller: 'AccountListController'
             });
     }]);

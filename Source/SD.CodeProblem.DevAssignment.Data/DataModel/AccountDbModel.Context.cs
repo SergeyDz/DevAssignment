@@ -18,6 +18,7 @@ namespace SD.CodeProblem.DevAssignment.Data.DataModel
         public AccountDbContext()
             : base("name=AccountDbContext")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

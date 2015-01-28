@@ -37,10 +37,21 @@ namespace SD.CodeProblem.DevAssignment.Data.Repository
         /// <summary>
         /// Load list of entities.
         /// </summary>
+        /// <param name="filters">Filter queribale functions list.</param>
         /// <returns>Enumerable collection of Account records.</returns>
-        public async Task<IEnumerable<Account>> Load()
+        public async Task<IEnumerable<Account>> Load(List<Func<IQueryable<Account>, IQueryable<Account>>> filters = null)
         {
-            return await _context.Account.ToListAsync();
+            IQueryable<Account> query = _context.Account;
+
+            if (filters == null)
+                return await query.ToListAsync();
+
+            foreach (var filter in filters)
+            {
+                query = filter(query);
+            }
+
+            return await query.ToListAsync();
         }
 
         /// <summary>

@@ -19,10 +19,11 @@ namespace SD.CodeProblem.DevAssignment.Contracts.Data
     public interface IDataRepository<TData>
     {
         /// <summary>
-        /// Load entity object skipping filters.
+        /// Load list of entities.
         /// </summary>
-        /// <returns>Enumerable collection of TData type objects.</returns>
-        Task<IEnumerable<TData>> Load();
+        /// <param name="filters">Filter queribale functions list.</param>
+        /// <returns>Enumerable collection of Account records.</returns>
+        Task<IEnumerable<TData>> Load(List<Func<IQueryable<TData>, IQueryable<TData>>> filters = null);
 
         /// <summary>
         /// Get data entity by identifier.

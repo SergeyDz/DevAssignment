@@ -1,4 +1,4 @@
-﻿(function (app) {
+﻿(function () {
 
     var appServices = angular.module('accountService', ['ngResource']);
 

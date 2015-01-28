@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -20,7 +21,7 @@ namespace DevAssignment.WebApi.Controllers
     public class AccountController : ApiController
     {
         private IAccountService _accountService;
-        private IDataRepository<Account> _repository; 
+        private IDataRepository<Account> _repository;
 
         public AccountController()
         {
@@ -37,8 +38,10 @@ namespace DevAssignment.WebApi.Controllers
         [Route("")]
         public async Task<List<Account>> GetAccountsAsync()
         {
-            var result = await _accountService.GetList<Account>();
-            return result.Take(10).ToList();
+            var filters = new List<Func<IQueryable<Account>, IQueryable<Account>>>();
+            filters.Add(q => q.Include(p => p.CreatedBy));
+            var result = await _accountService.GetList<Account>(filters);
+            return result.ToList();
         }
     }
 }

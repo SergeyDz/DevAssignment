@@ -935,7 +935,7 @@
     <Content Include="src\app.js" />
     <Content Include="src\controllers\AccountListController.js" />
     <Content Include="src\services\AccountService.js" />
-    <Content Include="src\views\accountlist.html" />
+    <Content Include="src\views\account\list.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
