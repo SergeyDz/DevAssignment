@@ -4,16 +4,12 @@
 <#
 	Dictionary<string, string> types = new Dictionary<string, string>() 
 	{ 
-		{"Address", "Address"},
-		{"AddressType", "AddressType"},
-		{"Client", "Client"},
-		{"EntityType", "EntityType"},
-		{"ClientStatus", "ClientStatus"},
-		{"Individual", "Individual"},
-		{"ContactType", "ContactType"},
+		{"Account", "Account"},
+		{"Order", "Order"},
+		{"User", "User"},
 	};
 
-	string lib = "Stikeman.ServiceModel.Flow.dll";
+	string lib = "SD.CodeProblem.DevAssignment.Data.dll";
 	foreach (KeyValuePair<string, string> pair in types)
 	{
 		GenerateDomainModelObject(lib, pair.Key, pair.Value);
