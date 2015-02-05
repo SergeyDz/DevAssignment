@@ -8,38 +8,40 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using AutoMapper;
-using SD.CodeProblem.DevAssignment.Contracts.Data;
-using SD.CodeProblem.DevAssignment.Contracts.Services;
-using SD.CodeProblem.DevAssignment.Data.DataModel;
-using SD.CodeProblem.DevAssignment.Data.Repository;
+using SD.CodeProblem.DevAssignment.Business.Model;
+using SD.CodeProblem.DevAssignment.Contracts.Services.Domain;
+using SD.CodeProblem.DevAssignment.Data.Model;
 using SD.CodeProblem.DevAssignment.Services;
+using SD.CodeProblem.DevAssignment.Services.Data;
+using SD.CodeProblem.DevAssignment.Services.Domain;
+using SD.CodeProblem.DevAssignment.Services.Mapping;
+using Account = SD.CodeProblem.DevAssignment.Domain.Model.Account;
 
 namespace DevAssignment.WebApi.Controllers
 {
     [RoutePrefix("api/account")]
     public class AccountController : ApiController
     {
-        private IAccountService _accountService;
-        private IDataRepository<Account> _repository;
+        private IDomainService<Account> _domainService;
+       
 
         public AccountController()
         {
-            _repository = new AccountRepository(new AccountDbContext());
-            _accountService = new AccountService(_repository);
+            _domainService = new AccountDomainService(new AccountDataRepository(new AccountDbContext()), new MappingEngine(new GenericMapperConfigurationProvider<AccountListMappingProfile>()));
         }
 
         [Route("{accountId}/amount")]
         public async Task<double> GetAccountAmountAsync(int accountId)
         {
-            return await _accountService.GetAccountAmount(accountId);
+            AccountInfo info = new AccountInfo(accountId, new AccountService(_domainService));
+            await info.RefreshAmount();
+            return info.Amount;
         }
 
         [Route("")]
         public async Task<List<Account>> GetAccountsAsync()
         {
-            var filters = new List<Func<IQueryable<Account>, IQueryable<Account>>>();
-            filters.Add(q => q.Include(p => p.CreatedBy));
-            var result = await _accountService.GetList<Account>(filters);
+            var result = await _domainService.Load();
             return result.ToList();
         }
     }

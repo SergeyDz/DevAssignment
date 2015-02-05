@@ -124,6 +124,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\SD.CodeProblem.DevAssignment.Business\SD.CodeProblem.DevAssignment.Business.csproj">
+      <Project>{edb3d4db-31c3-4768-8c0e-acb0ab7a2aa6}</Project>
+      <Name>SD.CodeProblem.DevAssignment.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\SD.CodeProblem.DevAssignment.Contracts\SD.CodeProblem.DevAssignment.Contracts.csproj">
       <Project>{32d855b3-1b29-47e9-a95a-e6b72e6ac209}</Project>
       <Name>SD.CodeProblem.DevAssignment.Contracts</Name>
@@ -144,6 +148,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\MapperConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />

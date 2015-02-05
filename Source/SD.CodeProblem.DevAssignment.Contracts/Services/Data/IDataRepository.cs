@@ -4,19 +4,20 @@
 // </copyright>
 // <author>Sergey Dzyuban</author>
 //-----------------------------------------------------------------------
-namespace SD.CodeProblem.DevAssignment.Contracts.Data
+namespace SD.CodeProblem.DevAssignment.Contracts.Services.Data
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using SD.CodeProblem.DevAssignment.Contracts.Common;
 
     /// <summary>
     /// Interface for Data Repository.
     /// </summary>
     /// <typeparam name="TData">Type parameter for data model entity.</typeparam>
-    public interface IDataRepository<TData>
+    public interface IDataRepository<TData> where TData : IIdentity<int>
     {
         /// <summary>
         /// Load list of entities.
@@ -49,8 +50,8 @@ namespace SD.CodeProblem.DevAssignment.Contracts.Data
         /// <summary>
         /// Delete record from database.
         /// </summary>
-        /// <param name="data">Entity data type to be deleted.</param>
+        /// <param name="id">Entity data type to be deleted.</param>
         /// <returns>Task for async operation.</returns>
-        Task Delete(TData data);
+        Task Delete(int id);
     }
 }

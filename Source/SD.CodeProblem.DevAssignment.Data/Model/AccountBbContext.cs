@@ -4,7 +4,7 @@
 // </copyright>
 // <author>Sergey Dzyuban</author>
 //-----------------------------------------------------------------------
-namespace SD.CodeProblem.DevAssignment.Data.DataModel
+namespace SD.CodeProblem.DevAssignment.Data.Model
 {
     using System;
     using System.Collections.Generic;

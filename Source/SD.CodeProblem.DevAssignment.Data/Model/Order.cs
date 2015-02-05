@@ -7,17 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SD.CodeProblem.DevAssignment.Data.DataModel
+namespace SD.CodeProblem.DevAssignment.Data.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Order
     {
         public int Id { get; set; }
-        public string Login { get; set; }
-        public string Name { get; set; }
-        public Nullable<bool> IsActive { get; set; }
+        public int AccountId { get; set; }
+        public string Description { get; set; }
+        public double Amount { get; set; }
         public System.DateTime CreatedOn { get; set; }
+        public int CreatedById { get; set; }
+        public Nullable<System.DateTime> UpdatedOn { get; set; }
+        public Nullable<int> UpdatedById { get; set; }
+    
+        public virtual User CreatedBy { get; set; }
+        public virtual User UpdatedBy { get; set; }
     }
 }

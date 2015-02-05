@@ -32,6 +32,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevAssignment.Web", "Web\De
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SD.CodeProblem.DevAssignment.Business", "SD.CodeProblem.DevAssignment.Business\SD.CodeProblem.DevAssignment.Business.csproj", "{EDB3D4DB-31C3-4768-8C0E-ACB0AB7A2AA6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevAssignment.MVC", "Web\DevAssignment.MVC\DevAssignment.MVC.csproj", "{525AFA0E-1684-480D-8B1B-BD87BBBBF6D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,6 +68,10 @@ Global
 		{EDB3D4DB-31C3-4768-8C0E-ACB0AB7A2AA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDB3D4DB-31C3-4768-8C0E-ACB0AB7A2AA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDB3D4DB-31C3-4768-8C0E-ACB0AB7A2AA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{525AFA0E-1684-480D-8B1B-BD87BBBBF6D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{525AFA0E-1684-480D-8B1B-BD87BBBBF6D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{525AFA0E-1684-480D-8B1B-BD87BBBBF6D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{525AFA0E-1684-480D-8B1B-BD87BBBBF6D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,5 +79,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{6D5B4642-BF55-4B56-823F-726E3EEDAEEA} = {FDAAFD43-1C19-4215-880B-5192B6FE0CAD}
 		{1770170C-88DD-463A-9557-BA185855456F} = {ADFD9E6A-13E7-482C-91E1-8911A4A41AC5}
+		{525AFA0E-1684-480D-8B1B-BD87BBBBF6D9} = {ADFD9E6A-13E7-482C-91E1-8911A4A41AC5}
 	EndGlobalSection
 EndGlobal

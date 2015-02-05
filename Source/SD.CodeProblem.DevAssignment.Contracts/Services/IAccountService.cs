@@ -23,13 +23,5 @@ namespace SD.CodeProblem.DevAssignment.Contracts.Services
         /// <param name="accountId">Account identifier.</param>
         /// <returns>Returns account amount value.</returns>
         Task<double> GetAccountAmount(int accountId);
-        
-        /// <summary>
-        /// Get list of entities
-        /// </summary>
-        /// <param name="filters">Filter functions list.</param>
-        /// <typeparam name="T">Entity type to be get.</typeparam>
-        /// <returns>Enumerable collection of fetch elements.</returns>
-        Task<IEnumerable<T>> GetList<T>(List<Func<IQueryable<T>, IQueryable<T>>> filters = null);
     }
 }

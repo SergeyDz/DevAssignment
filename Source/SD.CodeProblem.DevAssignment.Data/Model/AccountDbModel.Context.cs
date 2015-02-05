@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SD.CodeProblem.DevAssignment.Data.DataModel
+namespace SD.CodeProblem.DevAssignment.Data.Model
 {
     using System;
     using System.Data.Entity;
@@ -18,7 +18,6 @@ namespace SD.CodeProblem.DevAssignment.Data.DataModel
         public AccountDbContext()
             : base("name=AccountDbContext")
         {
-            this.Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

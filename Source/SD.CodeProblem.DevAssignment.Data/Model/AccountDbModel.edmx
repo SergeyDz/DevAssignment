@@ -130,7 +130,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AccountDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="AccountDbContext" annotation:LazyLoadingEnabled="false" >
+        <EntityContainer Name="AccountDbContext" annotation:LazyLoadingEnabled="true" >
           <EntitySet Name="Account" EntityType="AccountDbModel.Account" />
           <EntitySet Name="Order" EntityType="AccountDbModel.Order" />
           <EntitySet Name="User" EntityType="AccountDbModel.User" />

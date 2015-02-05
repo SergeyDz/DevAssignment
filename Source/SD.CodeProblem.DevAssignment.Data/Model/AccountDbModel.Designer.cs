@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Projects\bitbucket\DevAssignment\Source\SD.CodeProblem.DevAssignment.Data\DataModel\AccountDbModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Projects\bitbucket\DevAssignment\Source\SD.CodeProblem.DevAssignment.Data\Model\AccountDbModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

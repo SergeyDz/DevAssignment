@@ -6,15 +6,16 @@
 //-----------------------------------------------------------------------
 namespace SD.CodeProblem.DevAssignment.Services
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Data.Entity;
     using System.Linq;
-    using System.Text;
     using System.Threading.Tasks;
-    using SD.CodeProblem.DevAssignment.Contracts.Data;
+    using AutoMapper;
     using SD.CodeProblem.DevAssignment.Contracts.Services;
-    using SD.CodeProblem.DevAssignment.Data.DataModel;
+    using SD.CodeProblem.DevAssignment.Contracts.Services.Domain;
+    using SD.CodeProblem.DevAssignment.Services.Data;
+    using SD.CodeProblem.DevAssignment.Services.Domain;
+    using SD.CodeProblem.DevAssignment.Services.Mapping;
+    using data = SD.CodeProblem.DevAssignment.Data.Model;
+    using domain = SD.CodeProblem.DevAssignment.Domain.Model;
 
     /// <summary>
     /// Account-related basic operations service.
@@ -24,15 +25,17 @@ namespace SD.CodeProblem.DevAssignment.Services
         /// <summary>
         /// Data repository object.
         /// </summary>
-        private readonly IDataRepository<Account> _repository;
+        private readonly IDomainService<domain.Account> _domainService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountService"/> class.
         /// </summary>
-        /// <param name="repository">Data repository injection.</param>
-        public AccountService(IDataRepository<Account> repository)
+        /// <param name="domainService">Domain service reference.</param>
+        public AccountService(IDomainService<domain.Account> domainService)
         {
-            _repository = repository;
+            _domainService = new GenericDomainService<data.Account, domain.Account>(
+                new AccountDataRepository(new data.AccountDbContext()),
+                new MappingEngine(new GenericMapperConfigurationProvider<AccountMappingProfile>()));
         }
 
         /// <summary>
@@ -42,33 +45,8 @@ namespace SD.CodeProblem.DevAssignment.Services
         /// <returns>Returns account amount value.</returns>
         public async Task<double> GetAccountAmount(int accountId)
         {
-            var filters = new List<Func<IQueryable<Account>, IQueryable<Account>>>();
-            filters.Add(q => q.Include(p => p.Orders));
-            filters.Add(q => q.Where(p => p.Id == accountId));
-            var result = await _repository.Load(filters);
-            return result.FirstOrDefault().Orders.Sum(p => p.Amount);
-        }
-
-        /// <summary>
-        /// Get full list of entities.
-        /// </summary>
-        /// <param name="filters">Filter functions list.</param>
-        /// <typeparam name="T">Entity type parameter.</typeparam>
-        /// <returns>Generic collection of requested type.</returns>
-        public async Task<IEnumerable<T>> GetList<T>(List<Func<IQueryable<T>, IQueryable<T>>> filters = null)
-        {
-            IEnumerable<Account> list = null;
-
-            if (filters == null)
-            {
-                list = await _repository.Load();
-            }
-            else
-            {
-                list = await _repository.Load(filters.Cast<Func<IQueryable<Account>, IQueryable<Account>>>().ToList());
-            }
-
-            return list.Cast<T>();
+            var account = await _domainService.GetById(accountId);
+            return account.Orders.Sum(o => o.Amount);
         }
     }
 }
