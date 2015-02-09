@@ -13,5 +13,9 @@ namespace SD.CodeProblem.DevAssignment.Domain.Model
     /// </summary>
     public partial class Account : IAuditable<int>
     {
+        /// <summary>
+        /// Gets or sets total count of orders per each account.
+        /// </summary>
+        public int OrdersCount { get; set; }
     }
 }

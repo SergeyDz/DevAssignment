@@ -1,9 +1,36 @@
-﻿
+﻿@model IEnumerable<DevAssignment.MVC.Models.Account>
+
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Account info page";
 }
 
-<h2>Index</h2>
+<h1><span class="label label-primary">Accounts <span class="badge">@Model.Count()</span></span></h1>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Account Number</th>
+            <th>Account Name</th>
+            <th>Created On</th>
+            <th>Created By</th>
+            <th>Amount</th>
+        </tr>
+        </thead>
+        @foreach (var account in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model => account.Id)</td>
+                <td>@Html.DisplayFor(model => account.Code)</td>
+                <td>@Html.DisplayFor(model => account.Name)</td>
+                <td>@Html.DisplayFor(model => account.CreatedOn)</td>
+                <td>@Html.DisplayFor(model => account.CreatedBy.Name)</td>
+                <td><button type="button" class="btn btn-xs btn-info">Info <span class="badge">@account.Orders.Count()</span></button></td>
+            </tr>
+        }
+    </table>
+</div>
+
 
 

@@ -17,7 +17,7 @@
             <td>{{ account.Name }}</td>
             <td>{{ account.CreatedBy.Name }}</td>
             <td>{{ account.CreatedOn }}</td>
-            <td><button type="button" class="btn btn-xs btn-info" ng-click="getAccountAmount(account)">Info</button>{{account.Amount | number:2}}</td>
+            <td><button type="button" class="btn btn-xs btn-info" ng-click="getAccountAmount(account)">Info <span class="badge">{{account.OrdersCount}}</span></button>{{account.Amount | number:2}}</td>
         </tr>
     </table>
 </div>

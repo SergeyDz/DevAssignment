@@ -1,9 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
 <html lang="en" ng-app="accountApp">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Account Client - MVC APP </title>
-    <link href="Content/bootstrap.css" rel="stylesheet" />
+    @Styles.Render("~/css/bootstrap")
+    @Styles.Render("~/css/site")
 </head>
 <body>
     <div class="navbar navbar-fixed-top navbar-inverse">
@@ -24,7 +26,10 @@
     </div>
 
     <div class="container">
-        @RenderBody();
+        @RenderBody()
     </div>
+    @Scripts.Render("~/scripts/jquery")
+    @Scripts.Render("~/scripts/bootstrap")
+    @Scripts.Render("~/scripts/app")
 </body>
 </html>
