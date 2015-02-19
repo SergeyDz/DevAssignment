@@ -20,6 +20,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SD.CodeProblem.DevAssignmen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SD.CodeProblem.DevAssignment.Domain", "SD.CodeProblem.DevAssignment.Domain\SD.CodeProblem.DevAssignment.Domain.csproj", "{38595594-579B-4E31-B3D9-0C66B0EEC5F8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{8AE6DEFE-BF0E-406E-85CB-3E2D8ADD3E7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevAssignment.Web", "Web\DevAssignment.Web\DevAssignment.Web.csproj", "{1770170C-88DD-463A-9557-BA185855456F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,11 +50,16 @@ Global
 		{38595594-579B-4E31-B3D9-0C66B0EEC5F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38595594-579B-4E31-B3D9-0C66B0EEC5F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38595594-579B-4E31-B3D9-0C66B0EEC5F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1770170C-88DD-463A-9557-BA185855456F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1770170C-88DD-463A-9557-BA185855456F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1770170C-88DD-463A-9557-BA185855456F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1770170C-88DD-463A-9557-BA185855456F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6D5B4642-BF55-4B56-823F-726E3EEDAEEA} = {FDAAFD43-1C19-4215-880B-5192B6FE0CAD}
+		{1770170C-88DD-463A-9557-BA185855456F} = {8AE6DEFE-BF0E-406E-85CB-3E2D8ADD3E7C}
 	EndGlobalSection
 EndGlobal
