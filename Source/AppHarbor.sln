@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SD.CodeProblem.DevAssignment.Contracts", "SD.CodeProblem.DevAssignment.Contracts\SD.CodeProblem.DevAssignment.Contracts.csproj", "{32D855B3-1B29-47E9-A95A-E6B72E6AC209}"
 EndProject
@@ -12,11 +12,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StyleCop", "StyleCop", "{53
 		Settings.StyleCop = Settings.StyleCop
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SD.CodeProblem.DevAssignment.DomainModel", "SD.CodeProblem.DevAssignment.DomainModel\SD.CodeProblem.DevAssignment.DomainModel.csproj", "{38595594-579B-4E31-B3D9-0C66B0EEC5F8}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{FDAAFD43-1C19-4215-880B-5192B6FE0CAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SD.CodeProblem.DevAssignment.DomainModel.Test", "Test\SD.CodeProblem.DevAssignment.DomainModel.Test\SD.CodeProblem.DevAssignment.DomainModel.Test.csproj", "{6D5B4642-BF55-4B56-823F-726E3EEDAEEA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SD.CodeProblem.DevAssignment.Business.Test", "Test\SD.CodeProblem.DevAssignment.Business.Test\SD.CodeProblem.DevAssignment.Business.Test.csproj", "{6D5B4642-BF55-4B56-823F-726E3EEDAEEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SD.CodeProblem.DevAssignment.Data", "SD.CodeProblem.DevAssignment.Data\SD.CodeProblem.DevAssignment.Data.csproj", "{1696B54D-82D2-48F5-B4D6-DD5E744B1E35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SD.CodeProblem.DevAssignment.Domain", "SD.CodeProblem.DevAssignment.Domain\SD.CodeProblem.DevAssignment.Domain.csproj", "{38595594-579B-4E31-B3D9-0C66B0EEC5F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,14 +34,18 @@ Global
 		{C380A0D1-1A35-4A98-90E1-CA07AFE88AE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C380A0D1-1A35-4A98-90E1-CA07AFE88AE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C380A0D1-1A35-4A98-90E1-CA07AFE88AE9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{38595594-579B-4E31-B3D9-0C66B0EEC5F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{38595594-579B-4E31-B3D9-0C66B0EEC5F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{38595594-579B-4E31-B3D9-0C66B0EEC5F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{38595594-579B-4E31-B3D9-0C66B0EEC5F8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6D5B4642-BF55-4B56-823F-726E3EEDAEEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6D5B4642-BF55-4B56-823F-726E3EEDAEEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D5B4642-BF55-4B56-823F-726E3EEDAEEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D5B4642-BF55-4B56-823F-726E3EEDAEEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1696B54D-82D2-48F5-B4D6-DD5E744B1E35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1696B54D-82D2-48F5-B4D6-DD5E744B1E35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1696B54D-82D2-48F5-B4D6-DD5E744B1E35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1696B54D-82D2-48F5-B4D6-DD5E744B1E35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38595594-579B-4E31-B3D9-0C66B0EEC5F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38595594-579B-4E31-B3D9-0C66B0EEC5F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38595594-579B-4E31-B3D9-0C66B0EEC5F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38595594-579B-4E31-B3D9-0C66B0EEC5F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
