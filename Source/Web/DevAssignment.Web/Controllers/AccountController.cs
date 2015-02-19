@@ -22,7 +22,7 @@ namespace DevAssignment.WebApi.Controllers
 
         public AccountController()
         {
-            _domainService = new AccountDomainService(new AccountDataRepository(new AccountDbContext()), new MappingEngine(new GenericMapperConfigurationProvider<AccountListMappingProfile>()));
+            _domainService = new AccountDomainService(new AccountDataRepository(AccountDbContext.Create("SQLSERVER_CONNECTION_STRING")), new MappingEngine(new GenericMapperConfigurationProvider<AccountListMappingProfile>()));
         }
 
         [Route("{accountId}/amount")]
