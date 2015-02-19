@@ -34,7 +34,7 @@ namespace SD.CodeProblem.DevAssignment.Services.Services
         public AccountService(IDomainService<domain.Account> domainService)
         {
             _domainService = new GenericDomainService<data.Account, domain.Account>(
-                new AccountDataRepository(data.AccountDbContext.Create("SQLSERVER_CONNECTION_STRING")),
+                new AccountDataRepository(data.AccountDbContext.Create("AccountDbHarbor")),
                 new MappingEngine(new GenericMapperConfigurationProvider<AccountMappingProfile>()));
         }
 
