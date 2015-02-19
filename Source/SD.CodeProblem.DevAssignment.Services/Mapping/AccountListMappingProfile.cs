@@ -44,7 +44,7 @@ namespace SD.CodeProblem.DevAssignment.Services.Mapping
                 result.Code = value.Code;
                 result.CreatedOn = value.CreatedOn;
                 result.CreatedBy = Mapper.Map<data.User, domain.User>(value.CreatedBy);
-                result.OrdersCount = value.Orders.Count;
+                //result.OrdersCount = value.Orders.Count();
                 return result;
             });
         }
