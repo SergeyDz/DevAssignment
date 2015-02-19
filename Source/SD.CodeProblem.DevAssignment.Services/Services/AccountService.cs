@@ -4,7 +4,7 @@
 // </copyright>
 // <author>Sergey Dzyuban</author>
 //-----------------------------------------------------------------------
-namespace SD.CodeProblem.DevAssignment.Services
+namespace SD.CodeProblem.DevAssignment.Services.Services
 {
     using System.Linq;
     using System.Threading.Tasks;

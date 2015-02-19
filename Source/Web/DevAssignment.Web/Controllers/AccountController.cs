@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data.Entity;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using AutoMapper;
 using SD.CodeProblem.DevAssignment.Business.Model;
 using SD.CodeProblem.DevAssignment.Contracts.Services.Domain;
 using SD.CodeProblem.DevAssignment.Data.Model;
-using SD.CodeProblem.DevAssignment.Services;
 using SD.CodeProblem.DevAssignment.Services.Data;
 using SD.CodeProblem.DevAssignment.Services.Domain;
 using SD.CodeProblem.DevAssignment.Services.Mapping;
+using SD.CodeProblem.DevAssignment.Services.Services;
 using Account = SD.CodeProblem.DevAssignment.Domain.Model.Account;
 
 namespace DevAssignment.WebApi.Controllers
