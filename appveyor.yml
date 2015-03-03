@@ -96,7 +96,7 @@ build_script:
 #---------------------------------#
 test:
   assemblies:
-    - Source\Test\SD.CodeProblem.DevAssignment.Business.Test\bin\Debug\SD.CodeProblem.DevAssignment.DomainModel.Test.dll
+    - Source\Test\SD.CodeProblem.DevAssignment.Business.Test\bin\Release\SD.CodeProblem.DevAssignment.DomainModel.Test.dll
  
   categories:
     - Business
