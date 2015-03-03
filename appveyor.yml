@@ -11,6 +11,34 @@
 # version format
 version: 1.0.{build}
 
+#---------------------------------#
+#    environment configuration    #
+#---------------------------------#
+ 
+# Operating system (build VM template)
+os: Windows Server 2012
+  
+# fetch repository as zip archive
+shallow_clone: true                 # default is "false"
+ 
+# set clone depth
+clone_depth: 5                      # clone entire repository history if not defined
+  
+# enable patching of AssemblyInfo.* files
+assembly_info:
+  patch: true
+  file: AssemblyInfo.*
+  assembly_version: "1.0.{build}"
+  assembly_file_version: "{version}"
+  assembly_informational_version: "{version}"
+ 
+ 
+# Automatically register private account and/or project AppVeyor NuGet feeds.
+nuget:
+  account_feed: true
+  project_feed: true
+  disable_publish_on_pr: true     # disable publishing of .nupkg artifacts to
+                                  # account/project feeds for pull request builds
  
 #---------------------------------#
 #       build configuration       #
