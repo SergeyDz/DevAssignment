@@ -108,7 +108,8 @@
   </PropertyGroup>
   <PropertyGroup>
     <PostBuildEvent>copy "$(TargetDir)$(TargetName).dll" "$(ProjectDir)..\..\..\BinOutput"
-copy "$(TargetDir)$(TargetName).pdb" "$(ProjectDir)..\..\..\BinOutput"</PostBuildEvent>
+copy "$(TargetDir)$(TargetName).pdb" "$(ProjectDir)..\..\..\BinOutput"
+copy "$(TargetDir)NUnit.Framework.dll" "$(ProjectDir)..\..\..\BinOutput"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
