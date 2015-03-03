@@ -94,4 +94,10 @@ build_script:
 #---------------------------------#
 #       tests configuration       #
 #---------------------------------#
-
+test:
+  assemblies:
+    - Source\Test\SD.CodeProblem.DevAssignment.Business.Test\bin\Debug\SD.CodeProblem.DevAssignment.DomainModel.Test.dll
+ 
+  categories:
+    - Business
+    - TPL

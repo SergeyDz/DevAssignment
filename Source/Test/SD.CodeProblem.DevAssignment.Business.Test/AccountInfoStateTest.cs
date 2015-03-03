@@ -17,7 +17,7 @@ namespace SD.CodeProblem.DevAssignment.Business.Testt
     using SD.CodeProblem.DevAssignment.Business.Model;
     using System.Threading;
 
-    [TestFixture]
+    [TestFixture(Category = "Business")]
     public class AccountInfoStateTest
     {
         private int _accountId;

@@ -17,7 +17,7 @@ namespace SD.CodeProblem.DevAssignment.Business.Test
     using SD.CodeProblem.DevAssignment.Contracts.Services;
     using SD.CodeProblem.DevAssignment.Business.Model;
 
-    [TestFixture]
+    [TestFixture(Category = "TPL")]
     public class AccountInfoConcurrentTest
     {
         private double _amount;

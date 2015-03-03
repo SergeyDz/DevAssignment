@@ -16,7 +16,7 @@ namespace SD.CodeProblem.DevAssignment.Business.Testt
     using SD.CodeProblem.DevAssignment.Contracts.Services;
     using SD.CodeProblem.DevAssignment.Business.Model;
 
-    [TestFixture]
+    [TestFixture(Category = "Business")]
     public class AccountInfoInteractionTest
     {
         [Test(Description = "Checks if IAccountService method was called during interaction with AccountInfo.")]
