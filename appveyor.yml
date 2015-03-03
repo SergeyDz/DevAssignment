@@ -23,6 +23,10 @@ shallow_clone: true                 # default is "false"
  
 # set clone depth
 clone_depth: 5                      # clone entire repository history if not defined
+
+# environment variables
+environment:
+  VisualStudioVersion: 12.0
   
 # enable patching of AssemblyInfo.* files
 assembly_info:
