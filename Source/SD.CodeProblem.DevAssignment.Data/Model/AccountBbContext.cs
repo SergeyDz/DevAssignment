@@ -25,12 +25,12 @@ namespace SD.CodeProblem.DevAssignment.Data.Model
         private const string EntityFramewordConnectionStringWrapper = "metadata=res://*/Model.AccountDbModel.csdl|res://*/Model.AccountDbModel.ssdl|res://*/Model.AccountDbModel.msl;provider=System.Data.SqlClient;provider connection string='{0}'";
 
         /// <summary>
-        /// The Wilco database connection string.
+        /// The database connection string.
         /// </summary>
         private static readonly string ConnectionString = ConfigurationManager.ConnectionStrings[@"AccountDbContext"].ConnectionString;
 
         /// <summary>
-        /// The Wilco entity framework database first connection string.
+        /// The entity framework database first connection string.
         /// </summary>
         private static readonly string EntityFrameworkConnectionString = string.Format(EntityFramewordConnectionStringWrapper, ConnectionString);
         
@@ -46,7 +46,7 @@ namespace SD.CodeProblem.DevAssignment.Data.Model
         }
 
         /// <summary>
-        /// Creates an instance of the Wilco database context.
+        /// Creates an instance of the database context.
         /// </summary>
         /// <param name="connectionStringName">
         /// The optional name of connection string.
