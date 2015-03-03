@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 14
+VisualStudioVersion = 14.0.22310.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SD.CodeProblem.DevAssignment.Contracts", "SD.CodeProblem.DevAssignment.Contracts\SD.CodeProblem.DevAssignment.Contracts.csproj", "{32D855B3-1B29-47E9-A95A-E6B72E6AC209}"
 EndProject
@@ -33,6 +33,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SD.CodeProblem.DevAssignment.Business", "SD.CodeProblem.DevAssignment.Business\SD.CodeProblem.DevAssignment.Business.csproj", "{EDB3D4DB-31C3-4768-8C0E-ACB0AB7A2AA6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevAssignment.MVC", "Web\DevAssignment.MVC\DevAssignment.MVC.csproj", "{525AFA0E-1684-480D-8B1B-BD87BBBBF6D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{141C7869-2689-4CAA-AB70-D9FAA604909F}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -80,8 +85,5 @@ Global
 		{6D5B4642-BF55-4B56-823F-726E3EEDAEEA} = {FDAAFD43-1C19-4215-880B-5192B6FE0CAD}
 		{1770170C-88DD-463A-9557-BA185855456F} = {ADFD9E6A-13E7-482C-91E1-8911A4A41AC5}
 		{525AFA0E-1684-480D-8B1B-BD87BBBBF6D9} = {ADFD9E6A-13E7-482C-91E1-8911A4A41AC5}
-	EndGlobalSection
-	GlobalSection(Performance) = preSolution
-		HasPerformanceSessions = true
 	EndGlobalSection
 EndGlobal
